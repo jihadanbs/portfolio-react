@@ -1,9 +1,4 @@
-import React from 'react';
-
-// Node Module
 import {useState} from "react";
-
-// COMPONENTS
 import Navbar from './Navbar';
 
 const Header = () => {

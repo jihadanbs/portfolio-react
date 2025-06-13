@@ -9,10 +9,6 @@ import Review2 from './components/Sertifikat';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomizedTimeline from './components/Experience';
-
-
-
-// NODE MODULE
 import { ReactLenis } from 'lenis/react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

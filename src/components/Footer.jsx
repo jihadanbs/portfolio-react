@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { ButtonPrimary } from './Button'
 
 const sitemap = [

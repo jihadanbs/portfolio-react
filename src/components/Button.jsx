@@ -1,7 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
-// Primary button
 const ButtonPrimary= ({ href, target = '_self', label, icon, classes }) => {
     if (href) {
         return  (

@@ -1,9 +1,6 @@
-import React from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// COMPONENTS
 import { ButtonPrimary, ButtonOutline } from "./Button";
 import TypeIt from "typeit-react";
 

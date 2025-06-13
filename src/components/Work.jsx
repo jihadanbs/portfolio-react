@@ -1,8 +1,4 @@
-import React from 'react'
-
-// Components
 import ProjectCard from './ProjectCard';
-
 import { Link } from 'react-router-dom';
 
 const works = [

@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Modal from "./Modal"; // Pastikan Anda memiliki komponen modal
+import Modal from "./Modal";
 
 gsap.registerPlugin(ScrollTrigger);
 

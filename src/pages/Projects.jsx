@@ -1,19 +1,13 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import Footer from '../components/Footer';
 import ReactLenis from 'lenis/react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
-
-
 import { Link } from 'react-router-dom';
 
-
-
 gsap.registerPlugin(ScrollTrigger);
-
-
 
 const works = [
   {

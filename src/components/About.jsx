@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-
-// React-Count-up Library
+import{ useState, useEffect, useRef } from 'react';
 import CountUp from 'react-countup';
 
 const aboutItems = [

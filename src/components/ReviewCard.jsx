@@ -1,7 +1,4 @@
-import React from 'react'
-
 import PropTypes from 'prop-types';
-
 
 const ratings = new Array(5);
 ratings.fill({
