@@ -1,225 +1,284 @@
-import { useEffect } from 'react';
-import ProjectCard from '../components/ProjectCard';
-import Footer from '../components/Footer';
-import ReactLenis from 'lenis/react';
+import { useEffect } from "react";
+import ProjectCard from "../components/ProjectCard";
+import Footer from "../components/Footer";
+import ReactLenis from "lenis/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from '@gsap/react';
-import { Link } from 'react-router-dom';
+import { useGSAP } from "@gsap/react";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const works = [
   {
-    imgSrc: '/images/portfolio/ppid.png',
-    title: 'Website PPID Kab. Pesawaran', 
-    desc:'Redesign dan redevelop Website PPID Kabupaten Pesawaran for 5 Months',
-    tags: ['PHP', 'CI 4', 'Bootstrap 5', 'JQuery' ,'XAMPP', 'MySQL', 'Javascript', 'Internship'],
-    github: '',
-    livePreview:'https://ppid.pesawarankab.go.id/',
-    githubDisabled: true
+    imgSrc: "/images/portfolio/ppid.png",
+    title: "Website PPID Kab. Pesawaran",
+    desc: "Redesign dan redevelop Website PPID Kabupaten Pesawaran for 5 Months",
+    tags: [
+      "PHP",
+      "CI 4",
+      "Bootstrap 5",
+      "JQuery",
+      "XAMPP",
+      "MySQL",
+      "Javascript",
+      "Internship",
+    ],
+    github: "",
+    livePreview: "https://ppid.pesawarankab.go.id/",
+    githubDisabled: true,
   },
   {
-    imgSrc: '/images/portfolio/alhabsa.png',
-    title: 'AL Habsa Umrah Travel',
-    desc: 'Develop AL Habsa Umrah Travel Website',
-    tags: ['React Js', 'Vite'],
-    github: '',
-    livePreview: 'https://al-habsa-umrah-travel.vercel.app/',
+    imgSrc: "/images/portfolio/alhabsa.png",
+    title: "AL Habsa Umrah Travel",
+    desc: "AL Habsa Umrah Travel Website",
+    tags: [
+      "React Js",
+      "Vite",
+      "Tailwind CSS",
+      "Typescript",
+      "Vercel",
+      "Laravel 12",
+      "PHP",
+      "MySQL",
+      "Freelancer",
+    ],
+    github: "",
+    livePreview: "https://al-habsa-umrah-travel.vercel.app/",
   },
   {
-    imgSrc: '/images/portfolio/quenny.png',
-    title: 'Quenny Laundry',
-    desc: 'Platform for laundry ordering and cashier system',
-    tags: ['PHP Native', 'CSS', 'Javascript', 'Freelancer'],
-    github: '',
-    livePreview: 'http://quennylaundry.my.id/',
+    imgSrc: "/images/portfolio/manajemen-tugas.png",
+    title: "Manajemen Tugas",
+    desc: "Platform for scheduling daily, weekly and monthly tasks",
+    tags: [
+      "React Js",
+      "Tailwind CSS",
+      "Javascript",
+      "Vercel",
+      "Excel API",
+      "Excel Database",
+    ],
+    github: "https://github.com/jihadanbs/to-do-list-nextjs",
+    livePreview: "https://to-do-list-nextjs-eta.vercel.app/",
   },
   {
-    imgSrc: '/images/portfolio/web3.jpg',
-    title: 'To Do Application Web 3',  
-    desc:'Develop To Do Application Web 3',
-    tags: ['HTML', 'Javascript', 'Solidity'],
-    github: 'https://github.com/jihadanbs/to-do-application-web3',
-    livePreview:'',
-    githubDisabled: true
+    imgSrc: "/images/portfolio/quenny.png",
+    title: "Quenny Laundry",
+    desc: "Platform for laundry ordering and cashier system",
+    tags: ["PHP Native", "CSS", "Javascript", "Freelancer"],
+    github: "",
+    livePreview: "http://quennylaundry.my.id/",
   },
   {
-    imgSrc: '/images/portfolio/directory.png',
-    title: 'Directory Listing App', 
-    desc:'Application to find various places and services throughout Indonesia, similar to Google Maps',
-    tags: ['Javascript', 'Node JS', 'NPM', 'Express Js' ,'MongoDB', 'Mongoose'],
-    github: '',
-    livePreview:'',
-    githubDisabled: true
+    imgSrc: "/images/portfolio/web3.jpg",
+    title: "To Do Application Web 3",
+    desc: "Develop To Do Application Web 3",
+    tags: ["HTML", "Javascript", "Solidity"],
+    github: "https://github.com/jihadanbs/to-do-application-web3",
+    livePreview: "",
+    githubDisabled: true,
   },
   {
-    imgSrc: '/images/portfolio/shopping.jpg',
-    title: 'Web Shopping Cart',
-    desc:'E-commerce platform with features similar to Shopee',
-    tags: ['Javascript', 'Node JS', 'NPM', 'Express Js' ,'MongoDB', 'Mongoose', 'Vue Js'],
-    github: '',
-    livePreview:''
+    imgSrc: "/images/portfolio/directory.png",
+    title: "Directory Listing App",
+    desc: "Application to find various places and services throughout Indonesia, similar to Google Maps",
+    tags: ["Javascript", "Node JS", "NPM", "Express Js", "MongoDB", "Mongoose"],
+    github: "",
+    livePreview: "",
+    githubDisabled: true,
   },
   {
-    imgSrc: '/images/portfolio/polsek.png',
-    title: 'Website Polsek Kayu Aro', 
-    desc:'Dedevelop Website Polsek Kayu Aro',
-    tags: ['PHP', 'CI 4', 'Bootstrap 4', 'JQuery' ,'XAMPP', 'MySQL', 'Javascript'],
-    github: 'https://github.com/jihadanbs/polsek-kayu-aro',
-    livePreview:'',
+    imgSrc: "/images/portfolio/shopping.jpg",
+    title: "Web Shopping Cart",
+    desc: "E-commerce platform with features similar to Shopee",
+    tags: [
+      "Javascript",
+      "Node JS",
+      "NPM",
+      "Express Js",
+      "MongoDB",
+      "Mongoose",
+      "Vue Js",
+    ],
+    github: "",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/booksty.png',
-    title: 'Booksty Anna',
-    desc: 'Platform for booking and salon cashier system',
-    tags: ['PHP', 'CI 3', 'CSS', 'Javascript','Freelancer'],
-    github: '',
-    livePreview: 'http://booksty-anna.my.id/',
+    imgSrc: "/images/portfolio/polsek.png",
+    title: "Website Polsek Kayu Aro",
+    desc: "Dedevelop Website Polsek Kayu Aro",
+    tags: [
+      "PHP",
+      "CI 4",
+      "Bootstrap 4",
+      "JQuery",
+      "XAMPP",
+      "MySQL",
+      "Javascript",
+    ],
+    github: "https://github.com/jihadanbs/polsek-kayu-aro",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/golang.jpg',
-    title: 'URL Shortener',
-    desc: 'This platform supports the creation of shorter URLs',
-    tags: ['Golang', 'Redis'],
-    github: '',
-    livePreview: '',
+    imgSrc: "/images/portfolio/booksty.png",
+    title: "Booksty Anna",
+    desc: "Platform for booking and salon cashier system",
+    tags: ["PHP", "CI 3", "CSS", "Javascript", "Freelancer"],
+    github: "",
+    livePreview: "http://booksty-anna.my.id/",
   },
   {
-    imgSrc: '/images/portfolio/golang.jpg',
-    title: 'Text Search Engine',
-    desc: 'Implementing Concurrency in Golang to improve the performance and efficiency of the search process',
-    tags: ['Golang'],
-    github: '',
-    livePreview: '',
+    imgSrc: "/images/portfolio/golang.jpg",
+    title: "URL Shortener",
+    desc: "This platform supports the creation of shorter URLs",
+    tags: ["Golang", "Redis"],
+    github: "",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/golang.jpg',
-    title: 'Real Time Modern Web Apps',
-    desc: 'Modern web application using WebSockets in Golang and HTMX to display Hardware Monitor',
-    tags: ['Golang', 'Web Socket', 'HTMX'],
-    github: '',
-    livePreview:''
+    imgSrc: "/images/portfolio/golang.jpg",
+    title: "Text Search Engine",
+    desc: "Implementing Concurrency in Golang to improve the performance and efficiency of the search process",
+    tags: ["Golang"],
+    github: "",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/medical.jpg',
-    title: 'Healthcare Monitoring App',
-    desc: 'Creating a Simple Android and Website Application for Healthcare Monitoring',
-    tags: ['Kotlin', 'Android', 'React', 'Multi Platform'],
-    github: 'https://github.com/jihadanbs/healthcare-monitoring-app',
-    livePreview:''
+    imgSrc: "/images/portfolio/golang.jpg",
+    title: "Real Time Modern Web Apps",
+    desc: "Modern web application using WebSockets in Golang and HTMX to display Hardware Monitor",
+    tags: ["Golang", "Web Socket", "HTMX"],
+    github: "",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/jb-android.png',
-    title: 'JB Android App Mobile',
-    desc: 'Creating a simple Android App like Twitch (Project On Progress)',
-    tags: ['Kotlin', 'Android'],
-    github: 'https://github.com/jihadanbs/jb-app-android',
-    livePreview:''
+    imgSrc: "/images/portfolio/medical.jpg",
+    title: "Healthcare Monitoring App",
+    desc: "Creating a Simple Android and Website Application for Healthcare Monitoring",
+    tags: ["Kotlin", "Android", "React", "Multi Platform"],
+    github: "https://github.com/jihadanbs/healthcare-monitoring-app",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/pizza.png',
-    title: 'Pizza Android App Mobile',
-    desc: 'Creating a Simple Android Application for food ordering (Project On Progress)',
-    tags: ['Kotlin', 'Android'],
-    github: 'https://github.com/jihadanbs/pizza-app-andorid',
-    livePreview:''
+    imgSrc: "/images/portfolio/jb-android.png",
+    title: "JB Android App Mobile",
+    desc: "Creating a simple Android App like Twitch (Project On Progress)",
+    tags: ["Kotlin", "Android"],
+    github: "https://github.com/jihadanbs/jb-app-android",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/digital-perpus.png',
-    title: 'Digital-Perpustakaan',
-    desc: 'Simple Library Application for user and book management',
-    tags: ['PHP', 'CI 4', 'REST API', 'Server-Side' , 'MySQL', 'Javascript'],
-    github: 'https://github.com/jihadanbs/digital-perpustakaan',
-    livePreview:''
+    imgSrc: "/images/portfolio/pizza.png",
+    title: "Pizza Android App Mobile",
+    desc: "Creating a Simple Android Application for food ordering (Project On Progress)",
+    tags: ["Kotlin", "Android"],
+    github: "https://github.com/jihadanbs/pizza-app-andorid",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/indesa.png',
-    title: 'InDesa (SaaS)',
-    desc: 'SaaS application for village income and expenditure management',
-    tags: ['PHP Native', 'REST API', 'Server-Side' , 'MySQL', 'Javascript'],
-    github: 'https://github.com/jihadanbs/inDesa',
-    livePreview:''
+    imgSrc: "/images/portfolio/digital-perpus.png",
+    title: "Digital-Perpustakaan",
+    desc: "Simple Library Application for user and book management",
+    tags: ["PHP", "CI 4", "REST API", "Server-Side", "MySQL", "Javascript"],
+    github: "https://github.com/jihadanbs/digital-perpustakaan",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/hutangmu.png',
-    title: 'HutangMu (SaaS)',
-    desc: 'SaaS platform for managing daily income and expenses from Mrs. Sarmi chicken noodle stall in Bandar Lampung',
-    tags: ['PHP Native', 'REST API', 'Server-Side' , 'MySQL', 'Javascript'],
-    github: 'https://github.com/jihadanbs/HutangMU',
-    livePreview:''
+    imgSrc: "/images/portfolio/indesa.png",
+    title: "InDesa (SaaS)",
+    desc: "SaaS application for village income and expenditure management",
+    tags: ["PHP Native", "REST API", "Server-Side", "MySQL", "Javascript"],
+    github: "https://github.com/jihadanbs/inDesa",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/wisuda.png',
-    title: 'Graduate System',
-    desc: 'Platform for student data management for graduates',
-    tags: ['PHP', 'CI 3', 'REST API', 'Server-Side' , 'MySQL', 'Javascript'],
-    github: 'https://github.com/jihadanbs/graduate-system',
-    livePreview:''
+    imgSrc: "/images/portfolio/hutangmu.png",
+    title: "HutangMu (SaaS)",
+    desc: "SaaS platform for managing daily income and expenses from Mrs. Sarmi chicken noodle stall in Bandar Lampung",
+    tags: ["PHP Native", "REST API", "Server-Side", "MySQL", "Javascript"],
+    github: "https://github.com/jihadanbs/HutangMU",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/univ-harapan.png',
-    title: 'Sistem Informasi - Universitas Harapan',
-    desc: 'Platform for student data management',
-    tags: ['PHP', 'CI 3', 'REST API', 'Server-Side' , 'MySQL', 'Javascript'],
-    github: 'https://github.com/jihadanbs/UniversitasHarapan',
-    livePreview:''
+    imgSrc: "/images/portfolio/wisuda.png",
+    title: "Graduate System",
+    desc: "Platform for student data management for graduates",
+    tags: ["PHP", "CI 3", "REST API", "Server-Side", "MySQL", "Javascript"],
+    github: "https://github.com/jihadanbs/graduate-system",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/toko-univ.png',
-    title: 'Toko Universitas Harapan',
-    desc: 'Platform for purchasing goods',
-    tags: ['PHP', 'CI 3', 'REST API', 'Server-Side' , 'MySQL', 'Javascript', 'Midtrans'],
-    github: 'https://github.com/jihadanbs/TokoUniversitas',
-    livePreview:''
+    imgSrc: "/images/portfolio/univ-harapan.png",
+    title: "Sistem Informasi - Universitas Harapan",
+    desc: "Platform for student data management",
+    tags: ["PHP", "CI 3", "REST API", "Server-Side", "MySQL", "Javascript"],
+    github: "https://github.com/jihadanbs/UniversitasHarapan",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/rental-mobil.png',
-    title: 'Rental Mobil (SaaS)',
-    desc: 'Platform for car and car borrower data management',
-    tags: ['PHP', 'CI 3', 'REST API', 'Server-Side' , 'MySQL', 'Javascript'],
-    github: 'https://github.com/jihadanbs/minjem-mobil',
-    livePreview:''
+    imgSrc: "/images/portfolio/toko-univ.png",
+    title: "Toko Universitas Harapan",
+    desc: "Platform for purchasing goods",
+    tags: [
+      "PHP",
+      "CI 3",
+      "REST API",
+      "Server-Side",
+      "MySQL",
+      "Javascript",
+      "Midtrans",
+    ],
+    github: "https://github.com/jihadanbs/TokoUniversitas",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/ultah.png',
-    title: 'Ucapan Selamat Ulang Tahun',
-    desc: 'Simple website for birthday greetings',
-    tags: ['HTML', 'Javascript', 'CSS'],
-    github: 'https://github.com/jihadanbs/selamat-ulang-tahun',
-    livePreview:'https://jihadanbs.github.io/selamat-ulang-tahun/'
+    imgSrc: "/images/portfolio/rental-mobil.png",
+    title: "Rental Mobil (SaaS)",
+    desc: "Platform for car and car borrower data management",
+    tags: ["PHP", "CI 3", "REST API", "Server-Side", "MySQL", "Javascript"],
+    github: "https://github.com/jihadanbs/minjem-mobil",
+    livePreview: "",
   },
   {
-    imgSrc: '/images/portfolio/kalkulator.png',
-    title: 'Kalkulator Sederhana',
-    desc: 'Create a simple calculator using HTML, CSS, and Javascript',
-    tags: ['HTML', 'Javascript', 'CSS'],
-    github: 'https://github.com/jihadanbs/basic-calculator',
-    livePreview:''
+    imgSrc: "/images/portfolio/ultah.png",
+    title: "Ucapan Selamat Ulang Tahun",
+    desc: "Simple website for birthday greetings",
+    tags: ["HTML", "Javascript", "CSS"],
+    github: "https://github.com/jihadanbs/selamat-ulang-tahun",
+    livePreview: "https://jihadanbs.github.io/selamat-ulang-tahun/",
+  },
+  {
+    imgSrc: "/images/portfolio/kalkulator.png",
+    title: "Kalkulator Sederhana",
+    desc: "Create a simple calculator using HTML, CSS, and Javascript",
+    tags: ["HTML", "Javascript", "CSS"],
+    github: "https://github.com/jihadanbs/basic-calculator",
+    livePreview: "",
   },
 ];
-
 
 const Projects = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll ke atas setiap kali halaman dimuat
   }, []);
   useGSAP(() => {
-    const elements = gsap.utils.toArray('.reveal-up');
+    const elements = gsap.utils.toArray(".reveal-up");
 
     elements.forEach((element) => {
-      gsap.fromTo(element, 
+      gsap.fromTo(
+        element,
         { y: 50, opacity: 0 }, // Mulai dari posisi di bawah dan transparan
         {
-          y: 0, opacity: 1,
+          y: 0,
+          opacity: 1,
           duration: 1,
-          ease: 'power2.out',
+          ease: "power2.out",
           scrollTrigger: {
             trigger: element,
             start: "top 80%",
             end: "bottom 50%",
             toggleActions: "play none none reverse",
-          }
+          },
         }
       );
     });
@@ -227,25 +286,29 @@ const Projects = () => {
 
   return (
     <ReactLenis root classes="reveal-up">
-      <section className='section' id='work'>
+      <section className="section" id="work">
         <div className="container">
-         <div className="flex justify-between">
-         <h2 className='headline-2 mb-8 reveal-up'>Portofolio saya</h2>
-          <Link to="/" className='btn btn-primary reveal-up'>Back</Link>
-         </div>
+          <div className="flex justify-between">
+            <h2 className="headline-2 mb-8 reveal-up">Portofolio saya</h2>
+            <Link to="/" className="btn btn-primary reveal-up">
+              Back
+            </Link>
+          </div>
           <div className="grid gap-x-4 gap-y-5 grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))]">
-            {works.map(({ imgSrc, title, desc, tags, github, livePreview }, key) => (
-              <ProjectCard
-                key={key}
-                imgSrc={imgSrc}
-                title={title}
-                desc={desc}
-                tags={tags}
-                github={github}
-                livePreview={livePreview}
-                classes="reveal-up"
-              />
-            ))}
+            {works.map(
+              ({ imgSrc, title, desc, tags, github, livePreview }, key) => (
+                <ProjectCard
+                  key={key}
+                  imgSrc={imgSrc}
+                  title={title}
+                  desc={desc}
+                  tags={tags}
+                  github={github}
+                  livePreview={livePreview}
+                  classes="reveal-up"
+                />
+              )
+            )}
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
+import { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -21,31 +21,26 @@ const SkillCard = ({ imgSrc, label, desc, classes }) => {
           trigger: cardRef.current,
           start: "top 85%", // Mulai animasi saat 85% elemen masuk viewport
           once: true, // Animasi hanya berjalan sekali
-        }
+        },
       }
     );
   }, []);
 
   return (
-    <div 
+    <div
       ref={cardRef}
       className={`flex items-center gap-3 ring-2 ring-inset ring-zinc-50/10 rounded-2xl p-3 hover:bg-zinc-800 transition-colors group ${classes}`}
     >
       <figure className="bg-zinc-700/50 rounded-lg overflow-hidden w-12 h-12 p-2 group-hover:bg-zinc-900 transition-colors">
-        <img 
-          src={imgSrc}
-          width={32}
-          height={32}
-          alt={label}
-        />
+        <img src={imgSrc} width={32} height={32} alt={label} />
       </figure>
       <div className="skill-card__info">
         <h3 className="text-white font-semibold">{label}</h3>
-        <p className='text-zinc-400 text-sm'>{desc}</p>
+        <p className="text-zinc-400 text-sm">{desc}</p>
       </div>
     </div>
   );
-}
+};
 
 SkillCard.propTypes = {
   imgSrc: PropTypes.string.isRequired,
