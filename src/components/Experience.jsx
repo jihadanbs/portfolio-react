@@ -240,7 +240,7 @@ const CustomizedTimeline = () => {
                 className={`absolute inset-0 w-3 h-3 rounded-full bg-gradient-to-r ${experience.color} animate-ping opacity-20`}
               ></div>
             </div>
-            {index < experiences.length - 1 && (
+            {index < experiences.length - 0 && (
               <div
                 className="w-0.5 bg-gradient-to-b from-zinc-600 to-zinc-800 mt-2"
                 style={{ height: "80px" }}
