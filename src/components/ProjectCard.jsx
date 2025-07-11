@@ -1,9 +1,4 @@
-import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ProjectCard = ({
   imgSrc,
@@ -14,30 +9,9 @@ const ProjectCard = ({
   github,
   classes,
 }) => {
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    gsap.fromTo(
-      cardRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: "top 90%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-  }, []);
-
   return (
     <div
-      ref={cardRef}
-      className={`relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors ${classes}`}
+      className={`project-card-item relative p-4 rounded-2xl bg-zinc-800 hover:bg-zinc-700/50 active:bg-zinc-700/60 ring-1 ring-inset ring-zinc-50/5 transition-colors ${classes}`}
     >
       {/* Gambar Proyek */}
       <figure className="relative h-60 w-full aspect-square rounded-lg overflow-hidden group cursor-pointer">
