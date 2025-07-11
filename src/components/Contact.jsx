@@ -94,9 +94,9 @@ const Contact = () => {
 
     // Validasi Nama
     if (!name.trim()) {
-      newErrors.name = "Nama wajib diisi.";
+      newErrors.name = "Nama wajib diisi!";
     } else if (name.trim().length < 3) {
-      newErrors.name = "Nama minimal harus 3 karakter.";
+      newErrors.name = "Nama minimal harus 3 karakter!";
     }
 
     // Validasi Nomor Telepon

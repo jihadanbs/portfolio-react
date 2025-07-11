@@ -139,7 +139,7 @@ const Sertifikat = () => {
   };
 
   // Fungsi untuk render preview sertifikat
-  const renderCertificatePreview = (certificate, index) => {
+  const renderCertificatePreview = (certificate) => {
     // Untuk file PDF, tampilkan thumbnail PDF
     if (certificate.type === "pdf") {
       return (
@@ -201,10 +201,17 @@ const Sertifikat = () => {
           >
             {certificates.map((certificate, index) => (
               <div
+                role="button"
+                tabIndex="0"
                 key={`${certificate.title}-${index}`}
                 ref={(el) => (cardRefs.current[index] = el)}
                 className="sm:min-w-[300px] flex-shrink-0 snap-center relative cursor-pointer group transform transition-all duration-500 hover:scale-105"
                 onClick={() => handleClick(certificate)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleClick(certificate);
+                  }
+                }}
               >
                 {renderCertificatePreview(certificate, index)}
                 <div className="absolute inset-0 bg-black bg-opacity-70 opacity-100 group-hover:opacity-0 flex justify-center items-center text-black p-4 transition-opacity duration-700">

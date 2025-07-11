@@ -39,19 +39,19 @@ export const allCertificate = [
   {
     title: "Git Fundamental",
     description: "Completed the Git Fundamental course",
-    imgSrc: "/images/sertifikat/codepolitan-dasar-git.pdf",
+    imgSrc: "/images/sertifikat/dicoding-dasar-git.pdf",
     type: "pdf",
   },
   {
     title: "Dasar-dasar Pemrograman",
     description: "Finished the Basic Programming course",
-    imgSrc: "/images/sertifikat/codepolitan-dasar-pemrograman.pdf",
+    imgSrc: "/images/sertifikat/dicoding-dasar-pemrograman.pdf",
     type: "pdf",
   },
   {
     title: "Logika Dasar Pemrograman",
     description: "Completed the Programming Logic course",
-    imgSrc: "/images/sertifikat/codepolitan-logika-dasar.pdf",
+    imgSrc: "/images/sertifikat/dicoding-logika-dasar.pdf",
     type: "pdf",
   },
   {

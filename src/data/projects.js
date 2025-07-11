@@ -1,6 +1,5 @@
 export const allProjects = [
   {
-    id: 1,
     imgSrc: "/images/portfolio/ppid.png",
     title: "Website PPID Kab. Pesawaran",
     desc: "Redesign dan redevelop Website PPID Kabupaten Pesawaran for 5 Months",
@@ -19,7 +18,6 @@ export const allProjects = [
     githubDisabled: true,
   },
   {
-    id: 2,
     imgSrc: "/images/portfolio/alhabsa.png",
     title: "AL Habsa Umrah Travel",
     desc: "AL Habsa Umrah Travel Website",
@@ -38,7 +36,6 @@ export const allProjects = [
     livePreview: "https://al-habsa-umrah-travel.vercel.app/",
   },
   {
-    id: 3,
     imgSrc: "/images/portfolio/manajemen-tugas.png",
     title: "Manajemen Tugas",
     desc: "Platform for scheduling daily, weekly and monthly tasks",
@@ -54,7 +51,6 @@ export const allProjects = [
     livePreview: "https://to-do-list-nextjs-eta.vercel.app/",
   },
   {
-    id: 4,
     imgSrc: "/images/portfolio/quenny.png",
     title: "Quenny Laundry",
     desc: "Platform for laundry ordering and cashier system",
@@ -63,7 +59,6 @@ export const allProjects = [
     livePreview: "http://quennylaundry.my.id/",
   },
   {
-    id: 5,
     imgSrc: "/images/portfolio/web3.jpg",
     title: "To Do Application Web 3",
     desc: "Develop To Do Application Web 3",
@@ -73,7 +68,6 @@ export const allProjects = [
     githubDisabled: true,
   },
   {
-    id: 6,
     imgSrc: "/images/portfolio/directory.png",
     title: "Directory Listing App",
     desc: "Application to find various places and services throughout Indonesia, similar to Google Maps",
@@ -83,7 +77,6 @@ export const allProjects = [
     githubDisabled: true,
   },
   {
-    id: 7,
     imgSrc: "/images/portfolio/shopping.jpg",
     title: "Web Shopping Cart",
     desc: "E-commerce platform with features similar to Shopee",
@@ -100,7 +93,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 8,
     imgSrc: "/images/portfolio/polsek.png",
     title: "Website Polsek Kayu Aro",
     desc: "Dedevelop Website Polsek Kayu Aro",
@@ -117,7 +109,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 9,
     imgSrc: "/images/portfolio/booksty.png",
     title: "Booksty Anna",
     desc: "Platform for booking and salon cashier system",
@@ -126,7 +117,6 @@ export const allProjects = [
     livePreview: "http://booksty-anna.my.id/",
   },
   {
-    id: 10,
     imgSrc: "/images/portfolio/golang.jpg",
     title: "URL Shortener",
     desc: "This platform supports the creation of shorter URLs",
@@ -135,7 +125,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 11,
     imgSrc: "/images/portfolio/golang.jpg",
     title: "Text Search Engine",
     desc: "Implementing Concurrency in Golang to improve the performance and efficiency of the search process",
@@ -144,7 +133,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 12,
     imgSrc: "/images/portfolio/golang.jpg",
     title: "Real Time Modern Web Apps",
     desc: "Modern web application using WebSockets in Golang and HTMX to display Hardware Monitor",
@@ -153,7 +141,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 13,
     imgSrc: "/images/portfolio/medical.jpg",
     title: "Healthcare Monitoring App",
     desc: "Creating a Simple Android and Website Application for Healthcare Monitoring",
@@ -162,7 +149,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 14,
     imgSrc: "/images/portfolio/jb-android.png",
     title: "JB Android App Mobile",
     desc: "Creating a simple Android App like Twitch (Project On Progress)",
@@ -171,7 +157,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 15,
     imgSrc: "/images/portfolio/pizza.png",
     title: "Pizza Android App Mobile",
     desc: "Creating a Simple Android Application for food ordering (Project On Progress)",
@@ -180,7 +165,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 16,
     imgSrc: "/images/portfolio/digital-perpus.png",
     title: "Digital-Perpustakaan",
     desc: "Simple Library Application for user and book management",
@@ -189,7 +173,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 17,
     imgSrc: "/images/portfolio/indesa.png",
     title: "InDesa (SaaS)",
     desc: "SaaS application for village income and expenditure management",
@@ -198,7 +181,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 18,
     imgSrc: "/images/portfolio/hutangmu.png",
     title: "HutangMu (SaaS)",
     desc: "SaaS platform for managing daily income and expenses from Mrs. Sarmi chicken noodle stall in Bandar Lampung",
@@ -207,7 +189,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 19,
     imgSrc: "/images/portfolio/wisuda.png",
     title: "Graduate System",
     desc: "Platform for student data management for graduates",
@@ -216,7 +197,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 20,
     imgSrc: "/images/portfolio/univ-harapan.png",
     title: "Sistem Informasi - Universitas Harapan",
     desc: "Platform for student data management",
@@ -225,7 +205,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 21,
     imgSrc: "/images/portfolio/toko-univ.png",
     title: "Toko Universitas Harapan",
     desc: "Platform for purchasing goods",
@@ -242,7 +221,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 22,
     imgSrc: "/images/portfolio/rental-mobil.png",
     title: "Rental Mobil (SaaS)",
     desc: "Platform for car and car borrower data management",
@@ -251,7 +229,6 @@ export const allProjects = [
     livePreview: "",
   },
   {
-    id: 23,
     imgSrc: "/images/portfolio/ultah.png",
     title: "Ucapan Selamat Ulang Tahun",
     desc: "Simple website for birthday greetings",
@@ -260,7 +237,6 @@ export const allProjects = [
     livePreview: "https://jihadanbs.github.io/selamat-ulang-tahun/",
   },
   {
-    id: 24,
     imgSrc: "/images/portfolio/kalkulator.png",
     title: "Kalkulator Sederhana",
     desc: "Create a simple calculator using HTML, CSS, and Javascript",

@@ -13,7 +13,8 @@ body {
 }
 
 /* TYPOGRAPHY */
-.headline-1 .headline-2 {
+.headline-1,
+.headline-2 {
   @apply max-w-max;
   background: -webkit-linear-gradient(0deg, #fafafa, #bdbdbd);
   -webkit-background-clip: text;

@@ -7,9 +7,9 @@ const Experiences = () => {
   const itemRefs = useRef([]);
 
   // Debug: Log visible items
-  useEffect(() => {
-    console.log("Visible items:", visibleItems);
-  }, [visibleItems]);
+  // useEffect(() => {
+  //   console.log("Visible items:", visibleItems);
+  // }, [visibleItems]);
 
   // Urutan chronological yang benar (terbaru ke terlama)
   const experiences = allExperiences;

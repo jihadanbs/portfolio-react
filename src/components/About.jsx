@@ -43,10 +43,9 @@ const About = () => {
   );
 
   return (
-    // 'section' class akan mengambil jarak dari CSS global yang sudah kita perbaiki
+    // 'section' class akan mengambil jarak dari CSS global yang sudah perbaiki
     <section id="about" className="section" ref={sectionRef}>
       <div className="container">
-        {/* 'reveal-up' sudah dihandle oleh GSAP di App.jsx */}
         <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12 reveal-up">
           <div className="flex justify-between items-start mb-5">
             <h2 className="md:text-4xl text-2xl font-semibold text-zinc-100">

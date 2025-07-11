@@ -1,10 +1,10 @@
-import ProjectCard from "./ProjectCard";
-import { Link } from "react-router-dom";
-import { allProjects } from "../data/projects";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { Link } from "react-router-dom";
+import { allProjects } from "../data/projects";
+import ProjectCard from "./ProjectCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,27 +13,24 @@ const works = allProjects.slice(0, 3);
 const Work = () => {
   const container = useRef(null);
 
-  useGSAP(
-    () => {
-      gsap.fromTo(
-        ".project-card-item", // Target semua kartu projek
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          stagger: 0.15, // Jeda sedikit lebih lama
-          scrollTrigger: {
-            trigger: container.current, // Trigger-nya cuma satu
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    },
-    { scope: container }
-  );
+  useGSAP(() => {
+    gsap.fromTo(
+      ".project-card-item", // Target semua kartu projek
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.15, // Jeda sedikit lebih lama
+        scrollTrigger: {
+          trigger: container.current, // Trigger-nya cuma satu
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
 
   return (
     <section className="section" id="work">
