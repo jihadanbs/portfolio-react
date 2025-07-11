@@ -1,4 +1,5 @@
 import { ButtonPrimary } from "./Button";
+import ChevronRightIcon from "../icons/ChevronRightIcon";
 
 const sitemap = [
   {
@@ -59,8 +60,8 @@ const Footer = () => {
             <ButtonPrimary
               href="mailto:jihadanbs11@gmail.com"
               label="Start Project"
-              icon="chevron_right"
-              classes="reveal-up"
+              icon={<ChevronRightIcon className="w-5 h-5" />}
+              className="reveal-up"
             />
           </div>
 
