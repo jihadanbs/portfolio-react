@@ -4,11 +4,9 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skill from "./components/Skill";
 import Work from "./components/Work";
-// import Review from "./components/Review";
-// import Review2 from "./components/Sertifikat";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import CustomizedTimeline from "./components/Experience";
+import Experiences from "./components/Experience";
 import { ReactLenis } from "lenis/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -49,7 +47,7 @@ function App() {
         <Skill />
         <Work />
         <Sertifikat />
-        <CustomizedTimeline />
+        <Experiences />
         <Contact />
       </main>
       <Footer />

@@ -1,59 +1,8 @@
 import ProjectCard from "./ProjectCard";
 import { Link } from "react-router-dom";
+import { allProjects } from "../data/projects";
 
-const works = [
-  {
-    imgSrc: "/images/portfolio/ppid.png",
-    title: "Website PPID Kab. Pesawaran",
-    desc: "Redesign dan redevelop Website PPID Kabupaten Pesawaran for 5 Months",
-    tags: [
-      "PHP",
-      "CI 4",
-      "Bootstrap 5",
-      "JQuery",
-      "XAMPP",
-      "MySQL",
-      "Javascript",
-      "Internship",
-    ],
-    github: "",
-    livePreview: "https://ppid.pesawarankab.go.id/",
-    githubDisabled: true,
-  },
-  {
-    imgSrc: "/images/portfolio/alhabsa.png",
-    title: "AL Habsa Umrah Travel",
-    desc: "AL Habsa Umrah Travel Website",
-    tags: [
-      "React Js",
-      "Vite",
-      "Tailwind CSS",
-      "Typescript",
-      "Vercel",
-      "Laravel 12",
-      "PHP",
-      "MySQL",
-      "Freelancer",
-    ],
-    github: "",
-    livePreview: "https://al-habsa-umrah-travel.vercel.app/",
-  },
-  {
-    imgSrc: "/images/portfolio/manajemen-tugas.png",
-    title: "Manajemen Tugas",
-    desc: "Platform for scheduling daily, weekly and monthly tasks",
-    tags: [
-      "React Js",
-      "Tailwind CSS",
-      "Javascript",
-      "Vercel",
-      "Excel API",
-      "Excel Database",
-    ],
-    github: "https://github.com/jihadanbs/to-do-list-nextjs",
-    livePreview: "https://to-do-list-nextjs-eta.vercel.app/",
-  },
-];
+const works = allProjects.slice(0, 3);
 
 const Work = () => {
   return (

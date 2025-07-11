@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { allExperiences } from "../data/experiences";
 
-const CustomizedTimeline = () => {
+const Experiences = () => {
   const [visibleItems, setVisibleItems] = useState([]);
   const containerRef = useRef(null);
   const itemRefs = useRef([]);
@@ -11,52 +12,7 @@ const CustomizedTimeline = () => {
   }, [visibleItems]);
 
   // Urutan chronological yang benar (terbaru ke terlama)
-  const experiences = [
-    {
-      id: 1,
-      title: "Cybersecurity Course",
-      company: "ITBOX by Course-Net",
-      period: "Juli 2025 - Recently",
-      type: "course",
-      icon: "🔐",
-      color: "from-red-500 to-orange-500",
-      bgColor: "bg-red-500/10",
-      description: "Specialized cybersecurity training program",
-    },
-    {
-      id: 2,
-      title: "DBS Foundation Program",
-      company: "Dicoding, DBS Foundation",
-      period: "February 2025 – Recently",
-      type: "program",
-      icon: "🎓",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-500/10",
-      description: "Technology foundation program",
-    },
-    {
-      id: 3,
-      title: "Internship Full Stack Developer",
-      company: "Diskominfo Pesawaran, Lampung",
-      period: "February – June 2024",
-      type: "internship",
-      icon: "🚀",
-      color: "from-purple-500 to-pink-500",
-      bgColor: "bg-purple-500/10",
-      description: "Full-stack development internship",
-    },
-    {
-      id: 4,
-      title: "Freelancer",
-      company: "Freelance",
-      period: "Maret 2023 - Recently",
-      type: "work",
-      icon: "💼",
-      color: "from-green-500 to-emerald-500",
-      bgColor: "bg-green-500/10",
-      description: "Independent software development projects",
-    },
-  ];
+  const experiences = allExperiences;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -318,4 +274,4 @@ const CustomizedTimeline = () => {
   );
 };
 
-export default CustomizedTimeline;
+export default Experiences;
