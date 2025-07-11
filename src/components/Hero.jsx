@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { ButtonPrimary, ButtonOutline } from "./Button";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -36,43 +37,6 @@ const Hero = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-  const ButtonPrimary = ({ label, icon, href, target }) => (
-    <a
-      href={href}
-      target={target}
-      className="group relative inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-sky-400 to-blue-500 text-zinc-950 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 hover:from-sky-300 hover:to-blue-400 hover:scale-105 hover:shadow-lg hover:shadow-sky-500/25 active:scale-95"
-    >
-      <span className="relative z-10">{label}</span>
-      {icon && (
-        <svg
-          className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
-        </svg>
-      )}
-    </a>
-  );
-
-  const ButtonOutline = ({ label, icon, href }) => (
-    <a
-      href={href}
-      className="group inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800 text-zinc-50 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 hover:scale-105 ring-1 ring-inset ring-zinc-50/5"
-    >
-      <span>{label}</span>
-      {icon && (
-        <svg
-          className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-        </svg>
-      )}
-    </a>
-  );
 
   return (
     <section
@@ -145,7 +109,7 @@ const Hero = () => {
                   : "opacity-0 translate-y-8"
               }`}
             >
-              <span className="block text-zinc-50 mb-1">Hello, I'm</span>
+              <span className="block text-zinc-50 mb-1">Hello, I&apos;m</span>
               <span className="block bg-gradient-to-r from-sky-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                 Jihadan Beckhiano S
               </span>
@@ -163,24 +127,41 @@ const Hero = () => {
               }`}
             >
               Passionate about creating digital experiences that make a
-              difference. Let's build something amazing together.
+              difference. Let&apos;s build something amazing together.
             </p>
 
             {/* Buttons */}
             <div
-              className={`flex items-center justify-center lg:justify-start gap-3 sm:gap-4 flex-wrap transition-all duration-1000 delay-600 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
-              }`}
+              className={`flex items-center justify-center lg:justify-start gap-3 sm:gap-4 flex-wrap ...`}
             >
               <ButtonPrimary
                 label="Download CV"
-                icon="download"
                 href="/file/cv.pdf"
                 target="_blank"
+                icon={
+                  // <-- Berikan ikon SVG sebagai komponen
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+                  </svg>
+                }
               />
-              <ButtonOutline href="#about" label="Learn More" icon="arrow" />
+              <ButtonOutline
+                label="Learn More"
+                href="#about"
+                icon={
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                  </svg>
+                }
+              />
             </div>
           </div>
 
