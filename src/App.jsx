@@ -14,7 +14,7 @@ import Sertifikat from "./components/Sertifikat";
 import Security from "./components/Security";
 
 // Daftar gsap plugins
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useGSAP(() => {
