@@ -1,15 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { allExperiences } from "../data/experiences";
+import PropTypes from "prop-types";
 
 const Experiences = () => {
   const [visibleItems, setVisibleItems] = useState([]);
   const containerRef = useRef(null);
   const itemRefs = useRef([]);
-
-  // Debug: Log visible items
-  // useEffect(() => {
-  //   console.log("Visible items:", visibleItems);
-  // }, [visibleItems]);
 
   // Urutan chronological yang benar (terbaru ke terlama)
   const experiences = allExperiences;
@@ -229,6 +225,20 @@ const Experiences = () => {
         </div>
       </div>
     );
+  };
+
+  ExperienceCard.propTypes = {
+    experience: PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      icon: PropTypes.node.isRequired,
+      title: PropTypes.string.isRequired,
+      company: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      period: PropTypes.string.isRequired,
+      color: PropTypes.string.isRequired,
+    }).isRequired,
+    index: PropTypes.number.isRequired,
+    isVisible: PropTypes.bool.isRequired,
   };
 
   return (
