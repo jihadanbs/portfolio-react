@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
 
 const SecurityLayer = () => {
-  // State untuk mengontrol visibilitas peringatan screenshot
   const [isWarningVisible, setWarningVisible] = useState(false);
 
   useEffect(() => {
-    // --- Logika untuk event listener ---
-
-    // 1. Blok klik kanan
     const handleContextMenu = (e) => e.preventDefault();
     document.addEventListener("contextmenu", handleContextMenu);
 
-    // 2. Blok tombol shortcut keyboard
     const handleKeyDown = (e) => {
       if (
         e.keyCode === 123 || // F12
@@ -25,12 +20,9 @@ const SecurityLayer = () => {
     };
     document.addEventListener("keydown", handleKeyDown);
 
-    // 3. Deteksi tombol Print Screen
     const handleKeyUp = (e) => {
       if (e.key === "PrintScreen") {
-        // Tampilkan peringatan
         setWarningVisible(true);
-        // Sembunyikan setelah 3 detik
         setTimeout(() => {
           setWarningVisible(false);
         }, 3000);
@@ -38,47 +30,50 @@ const SecurityLayer = () => {
     };
     document.addEventListener("keyup", handleKeyUp);
 
+    // Menambahkan style untuk mematikan seleksi teks
+    document.body.style.webkitUserSelect = "none";
+    document.body.style.mozUserSelect = "none";
+    document.body.style.msUserSelect = "none";
+    document.body.style.userSelect = "none";
+
     // --- Cleanup Function ---
-    // Fungsi ini akan berjalan saat komponen dilepas (unmount)
-    // untuk mencegah memory leak.
     return () => {
       document.removeEventListener("contextmenu", handleContextMenu);
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
+
+      // Menghapus style dari <body> saat komponen dilepas
+      document.body.style.webkitUserSelect = "";
+      document.body.style.mozUserSelect = "";
+      document.body.style.msUserSelect = "";
+      document.body.style.userSelect = "";
     };
-  }, []); // Array dependensi kosong agar useEffect hanya berjalan sekali saat mount
+  }, []); // Dependensi kosong agar useEffect hanya berjalan sekali
+
+  // Style untuk warning diubah menjadi objek JavaScript
+  const warningStyle = {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    background: "rgba(0, 0, 0, 0.9)",
+    color: "white",
+    fontSize: "24px",
+    textAlign: "center",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 999999,
+  };
 
   return (
     <>
-      {/* Semua styling dijadikan satu di sini */}
-      <style jsx global>{`
-        body {
-          -webkit-user-select: none; /* Safari */
-          -moz-user-select: none; /* Firefox */
-          -ms-user-select: none; /* IE10+/Edge */
-          user-select: none; /* Standard */
-        }
-
-        #screenshot-warning {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.9);
-          color: white;
-          font-size: 24px;
-          text-align: center;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 999999;
-        }
-      `}</style>
-
-      {/* Peringatan screenshot yang tampilannya dikontrol oleh state */}
+      {/* Peringatan screenshot menggunakan style dari object */}
       {isWarningVisible && (
-        <div id="screenshot-warning">🚫 Screenshot tidak diperbolehkan!</div>
+        <div id="screenshot-warning" style={warningStyle}>
+          🚫 Screenshot tidak diperbolehkan!
+        </div>
       )}
     </>
   );
