@@ -1,9 +1,9 @@
 export const allExperiences = [
   {
     id: 1,
-    title: "Cybersecurity Course",
-    company: "JagoanSiber",
-    period: "Juli 2025 - Recently",
+    title: "Cybersecurity Bootcamp",
+    company: "JagoanSiber by Codepolitan",
+    period: "Agustus 2025 - Recently",
     type: "course",
     icon: "🛡️",
     color: "from-yellow-400 to-amber-500",
